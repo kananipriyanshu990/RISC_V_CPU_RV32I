@@ -1,14 +1,14 @@
 module IMMEDIATE_GENERATOR (input  wire [31:0] instruction,
                             output reg  [31:0] immediate);
 
-localparam [6:0] OPCODE_I_ALU = 7'b0010011;                                               // I-type ALU instructions
-localparam [6:0] OPCODE_LOAD  = 7'b0000011;                                               // Load instructions
-localparam [6:0] OPCODE_JALR   = 7'b1100111;                                              // JALR instruction
-localparam [6:0] OPCODE_STORE  = 7'b0100011;                                              // S-type store instructions
-localparam [6:0] OPCODE_BRANCH = 7'b1100011;                                              // B-type branch instructions
-localparam [6:0] OPCODE_LUI    = 7'b0110111;                                              // U-type LUI instruction
-localparam [6:0] OPCODE_AUIPC  = 7'b0010111;                                              // U-type AUIPC instruction
-localparam [6:0] OPCODE_JAL    = 7'b1101111;                                              // J-type JAL instruction
+localparam [6:0] OPCODE_I_ALU = 7'b0010011;                                              // I-type ALU instructions
+localparam [6:0] OPCODE_LOAD = 7'b0000011;                                               // Load instructions
+localparam [6:0] OPCODE_JALR = 7'b1100111;                                               // JALR instruction
+localparam [6:0] OPCODE_STORE = 7'b0100011;                                              // S-type store instructions
+localparam [6:0] OPCODE_BRANCH = 7'b1100011;                                             // B-type branch instructions
+localparam [6:0] OPCODE_LUI = 7'b0110111;                                                // U-type LUI instruction
+localparam [6:0] OPCODE_AUIPC = 7'b0010111;                                              // U-type AUIPC instruction
+localparam [6:0] OPCODE_JAL = 7'b1101111;                                                // J-type JAL instruction
 
 always @(*) begin
     case (instruction[6:0])
