@@ -1,7 +1,7 @@
-module BRANCH_UNIT (input  wire branch,
-                    input  wire [2:0] funct3,
-                    input  wire [31:0] rs1_data,
-                    input  wire [31:0] rs2_data,
+module BRANCH_UNIT (input wire branch,
+                    input wire [2:0]funct3,
+                    input wire [31:0]rs1_data,
+                    input wire [31:0]rs2_data,
                     output reg branch_taken);
 
     always @(*) begin
@@ -17,6 +17,9 @@ module BRANCH_UNIT (input  wire branch,
                 3'b111: branch_taken = (rs1_data >= rs2_data);                    // BGEU: unsigned greater-than-or-equal comparison
                 default: branch_taken = 1'b0;                                     // Unsupported branch funct3 is not taken
             endcase
+        end
+        else begin
+            branch_taken = 1'b0;
         end
     end
 endmodule

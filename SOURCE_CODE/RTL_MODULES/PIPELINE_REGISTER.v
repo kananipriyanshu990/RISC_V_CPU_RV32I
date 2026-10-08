@@ -3,8 +3,8 @@ module PIPELINE_REGISTER #(parameter WIDTH = 32)
                            input wire reset,
                            input wire enable,
                            input wire flush,
-                           input wire [WIDTH-1:0] data_in,
-                           output reg [WIDTH-1:0] data_out);
+                           input wire [WIDTH-1:0]data_in,
+                           output reg [WIDTH-1:0]data_out);
 
     always @(posedge clk) begin
         if (reset)
